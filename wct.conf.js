@@ -1,6 +1,19 @@
 var argv = require('yargs').argv;
 
 module.exports = {
+  plugins: {
+    local: {
+      browserOptions: {
+        chrome: [
+          'headless',
+          'disable-gpu'
+        ],
+        firefox: [
+          '-headless'
+        ]
+      }
+    }
+  },
   registerHooks: function(context) {
     var saucelabsPlatforms = [
       'macOS 10.12/iphone@10.3',
